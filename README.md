@@ -1,1 +1,1 @@
-# Legend-Of-Hyrule
+# Legend of Hyrule
