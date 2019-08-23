@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'arcadiagaming@gmail.com'
-EMAIL_HOST_PASSWORD = 'Zxcasdqwe123'
+EMAIL_HOST_USER = 'arcadi4gaming@gmail.com'
+EMAIL_HOST_PASSWORD = 'CiullaNajdenov23'
 EMAIL_PORT = 587
