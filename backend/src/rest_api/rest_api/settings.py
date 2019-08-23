@@ -114,10 +114,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL = "account.User"
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'arcadiagaming@gmail.com'
+EMAIL_HOST_PASSWORD = 'Zxcasdqwe123'
+EMAIL_PORT = 587
