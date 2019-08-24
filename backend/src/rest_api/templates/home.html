@@ -11,15 +11,24 @@
     <title>ArcadiaGaming</title>
   </head>
   <body>
+    {% block title %}
+      Home
+    {% endblock %}
     {%if title%}
       <h1>{{title}}</h1>
     {%endif%}
-    <a class="link" href="/register">Signup</a>
-    <a class="link" href="/login">Login</a>
     <!-- template inheritance -->
-    {% block content %} 
-      {% endblock %}
-
+    {% block content %}
+      {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">logout</a></p>
+      {% else %}
+        <p>You are not logged in</p>
+        <a class="link" href="/register">Signup</a>
+        <a href="{% url 'login' %}">login</a>
+      {% endif %}
+    {% endblock %}
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
