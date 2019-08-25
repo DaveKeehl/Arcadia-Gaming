@@ -8,6 +8,12 @@ class UserSignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
+    
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError("This email is already used")
+        return data
 
 # Line 1 – We import forms from django.
 

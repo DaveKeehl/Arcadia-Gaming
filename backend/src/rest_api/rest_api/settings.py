@@ -125,6 +125,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'arcadi4gaming@gmail.com'
+EMAIL_HOST_USER = 'thearcadiagaming@gmail.com'
 EMAIL_HOST_PASSWORD = 'CiullaNajdenov23'
 EMAIL_PORT = 587
