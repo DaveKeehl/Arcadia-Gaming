@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 class UserSignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=100, help_text='Required')
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(UserSignUpForm, self).__init__(*args, **kwargs)
 
     class Meta:
         model = User
@@ -12,7 +15,9 @@ class UserSignUpForm(UserCreationForm):
     def clean_email(self):
         data = self.cleaned_data['email']
         if User.objects.filter(email=data).exists():
-            raise forms.ValidationError("This email is already used")
+            user = User.objects.get(email=data)
+            if user.is_active:
+                raise forms.ValidationError("This email is already used")
         return data
 
 # Line 1 – We import forms from django.

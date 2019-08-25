@@ -37,7 +37,7 @@ from django.core.mail import EmailMessage
 
 def usersignup(request):
     if request.method == 'POST':
-        form = UserSignUpForm(request.POST)
+        form = UserSignUpForm(request.POST, request=request)
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = False
