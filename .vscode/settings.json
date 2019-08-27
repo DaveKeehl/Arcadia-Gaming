@@ -1,3 +1,10 @@
 {
-    "python.pythonPath": "/usr/local/opt/python/bin/python3.7"
+    "python.pythonPath": "/usr/local/bin/python3",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "python.envFile":"${workspaceFolder}/.env"
 }
